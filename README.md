@@ -69,7 +69,7 @@ Platform: Web Application (Browser-based access)
 ✅ Scalable for multiple branches and users
 
 Screenshort:
-<img width="1100" height="600" alt="image" src="https://github.com/user-attachments/assets/ec06c1a6-5987-4379-b312-a1ab81dd6480" />
+<img width="50" height="200" alt="image" src="https://github.com/user-attachments/assets/ec06c1a6-5987-4379-b312-a1ab81dd6480" />
 
 <img width="1125" height="762" alt="image" src="https://github.com/user-attachments/assets/d8dd9e90-84b7-4f5d-aa40-98583f34b237" />
 
@@ -88,6 +88,7 @@ Screenshort:
 <img width="1062" height="749" alt="image" src="https://github.com/user-attachments/assets/fa1ba797-15bd-4d19-b2f4-cd372ccff32f" />
 <img width="1050" height="749" alt="image" src="https://github.com/user-attachments/assets/e554aaa6-d67a-476e-986c-7524e9e39f61" />
 <img width="1088" height="749" alt="image" src="https://github.com/user-attachments/assets/ecfa4cbc-26ab-4944-aff2-eb7fabed533e" />
+
 
 
 
