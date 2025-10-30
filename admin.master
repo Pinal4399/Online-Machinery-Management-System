@@ -1,0 +1,52 @@
+﻿<%@ Master Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="admin.master.vb" Inherits="admin" %>
+
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+ 
+        
+   
+    <table style="width: 921px">
+<tr><td class="style34">
+ <div id="leftmenu">
+
+        <div id="leftmenu_top"></div>
+
+				<div id="leftmenu_main">    
+                <ul>
+                    <li> <asp:HyperLink ID="HyperLink3" runat="server" 
+        NavigateUrl="~/maintainbranch.aspx" >Maintain Branch</asp:HyperLink></li>
+                    <li> <asp:HyperLink ID="HyperLink9" runat="server" 
+        NavigateUrl="~/maintainbranchmanager.aspx" >Maintain Branch Manager</asp:HyperLink></li>
+                    <li> <asp:HyperLink ID="HyperLink10" runat="server" NavigateUrl="~/maintaincategory.aspx">Maintain 
+                        Category
+                        </asp:HyperLink></li>
+                         <li> <asp:HyperLink ID="HyperLink4" runat="server" 
+        NavigateUrl="~/purchasea.aspx" >Purchase Report</asp:HyperLink></li>
+         <li> <asp:HyperLink ID="HyperLink5" runat="server" 
+        NavigateUrl="~/salesa.aspx" >Sales Report</asp:HyperLink></li>
+           <li> <asp:HyperLink ID="HyperLink6" runat="server" 
+        NavigateUrl="~/complainta.aspx" >Complaint Report</asp:HyperLink></li>
+                   <li> <asp:HyperLink ID="HyperLink7" runat="server" 
+        NavigateUrl="~/feedbacka.aspx" >Feedback Report</asp:HyperLink></li>
+                      <li> <asp:HyperLink ID="HyperLink8" runat="server" 
+        NavigateUrl="~/customera.aspx" >Customer Report</asp:HyperLink></li>
+                    <li><asp:HyperLink ID="HyperLink11" runat="server" 
+        NavigateUrl="~/changepwd.aspx" >Change Password</asp:HyperLink></li>
+                    <li>  <asp:HyperLink ID="HyperLink2" runat="server" 
+        NavigateUrl="~/mail1.aspx" > Advertisement of Product</asp:HyperLink></li>
+                    <li> <asp:HyperLink ID="HyperLink1" runat="server" 
+        NavigateUrl="~/index.aspx" >Log Out</asp:HyperLink></li>
+                   
+                </ul>
+</div>              
+              <div id="leftmenu_bottom"></div>
+        </div>
+</td>
+<td style="border: medium solid #2D89AC">
+<div>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+    </asp:ContentPlaceHolder>
+</div>
+</td></tr></table>
+</asp:Content>
+

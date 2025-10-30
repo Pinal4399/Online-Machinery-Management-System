@@ -1,0 +1,102 @@
+<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+<%@ Register assembly="EO.Web" namespace="EO.Web" tagprefix="eo" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+    <html> 
+  <head runat="server">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>index</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+ 
+    <script type="text/javascript" language="javascript">
+    function changeColor(idObj,colorObj)
+    {
+        document.getElementById(idObj.id).style.color = colorObj;
+    }
+    </script>
+ <asp:ContentPlaceHolder id="head" runat="server">
+     
+    </asp:ContentPlaceHolder>
+    </head>
+  <body>
+    <form id="form1" runat="server">
+    <div class="tp_img1">
+				<div class="tp_img2">
+					<img src="img/logo.png" alt="" class="logo" />
+					
+                        <asp:ScriptManager ID="ScriptManager1" runat="server">
+                        </asp:ScriptManager>
+                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                        <ContentTemplate>
+                            <asp:AdRotator ID="AdRotator1" runat="server" DataSourceID="SqlDataSource1" 
+                                Height="150px" Width="150px" />
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+                                ConnectionString="<%$ ConnectionStrings:con1 %>" 
+                                SelectCommand="SELECT * FROM [tbl_image]"></asp:SqlDataSource>
+                        </ContentTemplate>
+                        <Triggers>
+                        <asp:AsyncPostBackTrigger ControlID="Timer1" EventName="Tick" />
+                        </Triggers>
+                        </asp:UpdatePanel>
+                        
+					<asp:Timer  ID="Timer1" runat="server" 
+                        Interval="2000">
+                    </asp:Timer>
+                  
+                    <br />
+                  
+                </div>
+				
+			</div>
+				<div class="navi">
+				   <asp:HyperLink ID="HyperLink11" runat="server" 
+                    NavigateUrl="~/infra.aspx"  class="navi_tx"
+                   >Home</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink1" runat="server"
+                    NavigateUrl="~/a1.aspx" class="navi_tx"
+                   >AboutUs</asp:HyperLink>  
+				<asp:HyperLink ID="HyperLink10" runat="server" 
+                    NavigateUrl="~/contact.aspx" class="navi_tx"
+                    >ContactUs</asp:HyperLink>  
+                    	<asp:HyperLink ID="HyperLink12" runat="server" 
+                    NavigateUrl="~/product_info.aspx" class="navi_tx"
+                    >Product</asp:HyperLink>   
+                    <asp:HyperLink ID="HyperLink13" runat="server" 
+                    NavigateUrl="~/service.aspx" class="navi_tx"
+                    >Services</asp:HyperLink>   
+                    <asp:HyperLink ID="HyperLink14" runat="server" 
+                    NavigateUrl="~/feed.aspx" class="navi_tx"
+                    >Feedback</asp:HyperLink>                           
+				
+			</div>
+    
+              <div>
+    <br />
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    
+    </div>
+    </form>
+   	<div id="sub_block2">
+		<div id="footer_block">
+			
+			<span class="ftr_nv">
+				 <a href="infra.aspx">Home</a>
+				 <span>|</span> 
+				 <a href="a1.aspx"> About Us</a>    
+				 <span>|</span>     
+				 <a href="contact.aspx">Contact us</a>
+				 <span>|</span>      
+				 <a href="product_info.aspx">Product</a>
+				 <span>|</span>       
+				 <a href="service.aspx">Services</a>
+ <span>|</span>       
+				 <a href="feed.aspx">Feedback</a>
+				
+			</span> <br /> <br /> <span class="cpy">Copyright © 2012 Param TechnoSystem Pvt 
+            Ltd. All rights reserved.</span></div>
+	</div>
+	
+	</body>  
+</html>

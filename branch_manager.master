@@ -1,0 +1,62 @@
+﻿<%@ Master Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="branch_manager.master.vb" Inherits="branch_manager" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <style type="text/css">
+        .style13
+        {
+            width: 240px;
+        }
+    </style>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <table style="height: 107px; width: 949px">
+    <tr>
+        <td class="style13">
+         <div id="leftmenu">
+
+        <div id="leftmenu_top"></div>
+
+				<div id="leftmenu_main">    
+                <ul>
+                 <li><asp:HyperLink ID="HyperLink18" runat="server" 
+        NavigateUrl="~/tool_info_display.aspx" >Tools Information</asp:HyperLink></li>
+         <li><asp:HyperLink ID="HyperLink20" runat="server" 
+        NavigateUrl="~/viewproduct.aspx" >Maintain Product Info</asp:HyperLink></li>
+     
+                    <li> <asp:HyperLink ID="HyperLink8" runat="server" 
+        NavigateUrl="~/supplier.aspx" >Maintain Supplier</asp:HyperLink></li>
+                    <li> <asp:HyperLink ID="HyperLink13" runat="server" 
+        NavigateUrl="~/supplier_order_tool.aspx" >Order Tools</asp:HyperLink></li>
+         <li><asp:HyperLink ID="HyperLink19" runat="server" 
+        NavigateUrl="~/tool.aspx" >Tools Add</asp:HyperLink></li>
+             <li><asp:HyperLink ID="HyperLink1" runat="server" 
+        NavigateUrl="~/mproducttools.aspx" >Maintain Product Tools</asp:HyperLink></li>
+         <li><asp:HyperLink ID="HyperLink22" runat="server" 
+        NavigateUrl="~/finalproduct.aspx" >Maintain Product</asp:HyperLink></li>
+          <li><asp:HyperLink ID="HyperLink21" runat="server" 
+        NavigateUrl="~/complaint.aspx" >View Complaint</asp:HyperLink></li>
+          <li> <asp:HyperLink ID="HyperLink14" runat="server" NavigateUrl="~/maintainemp.aspx">Maintain 
+              Employee</asp:HyperLink></li>
+          <li>  <asp:HyperLink ID="HyperLink16" runat="server" 
+        NavigateUrl="~/maintaintechnician.aspx" >Maintain Technician</asp:HyperLink></li>      
+         <li><asp:HyperLink ID="HyperLink15" runat="server" 
+        NavigateUrl="~/changepwd.aspx" >Change Password</asp:HyperLink></li>
+                    <li> <asp:HyperLink ID="HyperLink17" runat="server" 
+        NavigateUrl="~/index.aspx" >Log Out</asp:HyperLink></li>
+                   
+                </ul>
+</div>              
+              <div id="leftmenu_bottom"></div>
+        </div>
+           
+           
+        </td>
+        <td style="border: medium solid #2D89AC">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server" >
+            </asp:ContentPlaceHolder></div>
+        </td>
+    </tr>
+</table>
+</asp:Content>
+

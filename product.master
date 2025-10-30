@@ -1,0 +1,121 @@
+﻿<%@ Master Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="product.master.vb" Inherits="product" %>
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="cc1" %>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+        <table>
+       <tr><td></td><td class="style130">
+           select category:
+    <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" 
+         DataTextField="Cat_Name" DataValueField="Cat_No" DataSourceID="SqlDataSource1">
+    </asp:DropDownList>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+                ConnectionString="<%$ ConnectionStrings:con1 %>" 
+                SelectCommand="SELECT [Cat_No], [Cat_Name] FROM [tbl_cat]">
+            </asp:SqlDataSource>
+            </td><td class="style65"></td>
+    </tr>
+    <tr><td>
+     <span class="blk1_lp">
+   <table>
+    <tr><td colspan="2" style="text-decoration: blink">
+        <asp:Label ID="Label5" runat="server" CssClass="newStyle2" Font-Bold="True" 
+            ForeColor="#006699" Text="Login to CNCsite Account"></asp:Label>
+        </td></tr>
+        <tr><td class="style17">
+        <asp:Label ID="Label3" runat="server" Text="User Type" ></asp:Label>
+</td>
+        <td class="style17">
+            <asp:DropDownList ID="DropDownList2" runat="server" Width="150px" 
+                AutoPostBack="True" Height="34px" >
+                <asp:ListItem>Owner</asp:ListItem>
+                <asp:ListItem>Admin</asp:ListItem>
+                <asp:ListItem>Branch Manager</asp:ListItem>
+                <asp:ListItem>Technician</asp:ListItem>
+                <asp:ListItem>Customer</asp:ListItem>
+            </asp:DropDownList>
+           </td>
+   </tr>
+   <tr><td>
+   <cc1:ValidatorCalloutExtender ID="ValidatorCalloutExtender2" runat="server" TargetControlID="RegularExpressionValidator1">
+        </cc1:ValidatorCalloutExtender>
+        <asp:Label ID="Label4" runat="server" Text="Email_Id" ></asp:Label>      
+</td>
+        <td><asp:TextBox ID="TextBox1" runat="server" Height="24px" Width="150px" 
+                ></asp:TextBox>
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                ErrorMessage="You must Enter an Email Address" 
+                ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" 
+                ControlToValidate="TextBox1">*</asp:RegularExpressionValidator>
+       </td>
+   </tr>
+    <tr><td>
+    <cc1:PasswordStrength ID="PasswordStrength1" runat="server" TargetControlID="txtpwd">
+        </cc1:PasswordStrength>  
+        <asp:Label ID="Label2" runat="server" Text="Password" ></asp:Label>       
+</td>
+        <td><asp:TextBox ID="txtpwd" runat="server" TextMode="Password" Height="20px" 
+                Width="147px" ></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                ErrorMessage="RequiredFieldValidator" ControlToValidate="txtpwd">Please 
+            enter password</asp:RequiredFieldValidator>
+        </td>
+   </tr>
+   <tr>
+        <td colspan="2"> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:ImageButton 
+                ID="ImageButton1" runat="server" Height="30px" 
+                ImageUrl="~/images/sbm.gif" />
+            &nbsp;&nbsp;&nbsp;
+            <br /></td></tr>
+            <tr><td colspan="2">  <asp:Label ID="Label6" runat="server" Text="Forgot your Pasword?"></asp:Label>
+        
+            <asp:HyperLink ID="HyperLink10" runat="server" NavigateUrl="~/forgotpwd.aspx">Click 
+                here</asp:HyperLink></td></tr>
+          <tr><td  colspan="2">
+          <asp:Label ID="Label1" runat="server" Text="No Account yet?"></asp:Label>
+        
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/registration.aspx">Click 
+              here</asp:HyperLink>
+          </td></tr>
+        
+        </table></span>
+    </td><td class="style130">
+        <br /> 
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
+            DataSourceID="SqlDataSource3" DataKeyNames="Product_No" CellPadding="4" 
+            GridLines="None" ForeColor="#333333">
+            <FooterStyle BackColor="#5D7B9D" ForeColor="White" Font-Bold="True" />
+            <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+            <Columns>
+                
+                <asp:HyperLinkField DataNavigateUrlFields="Product_No" 
+                    DataTextField="Product_Name" HeaderText="Product Name" 
+                    DataNavigateUrlFormatString="product_info.aspx?pno={0}" />
+            </Columns>
+            <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+            <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+            <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+            <EditRowStyle BackColor="#999999" />
+            <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+        </asp:GridView>
+        <asp:SqlDataSource ID="SqlDataSource3" runat="server" 
+            ConnectionString="<%$ ConnectionStrings:con1 %>" 
+            
+            
+            SelectCommand="SELECT [Product_No], [Product_Name], [Cat_No] FROM [tbl_product] WHERE ([Cat_No] = @Cat_No)">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="DropDownList1" Name="Cat_No" 
+                    PropertyName="SelectedValue" Type="Int32" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        		
+        </td><td style="border: medium solid #2D89AC">
+        
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                </asp:ContentPlaceHolder>
+        </td></tr>
+    </table>
+
+
+   
+</asp:Content>
+

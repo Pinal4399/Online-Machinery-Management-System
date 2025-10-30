@@ -1,0 +1,85 @@
+﻿<%@ Master Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="home.master.vb" Inherits="home" %>
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="cc1" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <style type="text/css">
+        .style1
+        {
+            width: 712px;
+        }
+    </style>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+   
+    <table>
+<tr><td>
+<span class="blk1_lp">
+   <table>
+    <tr><td colspan="2" style="text-decoration: blink">
+        <asp:Label ID="Label5" runat="server" CssClass="newStyle2" Font-Bold="True" 
+            ForeColor="#006699" Text="Login to CNCsite Account"></asp:Label>
+        </td></tr>
+        <tr><td class="style17">
+        <asp:Label ID="Label3" runat="server" Text="User Type" ></asp:Label>
+</td>
+        <td class="style17">
+            <asp:DropDownList ID="DropDownList1" runat="server" Width="150px" 
+                AutoPostBack="True" Height="34px" >
+                <asp:ListItem>Owner</asp:ListItem>
+                <asp:ListItem>Admin</asp:ListItem>
+                <asp:ListItem>Branch Manager</asp:ListItem>
+                <asp:ListItem>Technician</asp:ListItem>
+                <asp:ListItem>Customer</asp:ListItem>
+            </asp:DropDownList>
+           </td>
+   </tr>
+   <tr><td>
+   <cc1:ValidatorCalloutExtender ID="ValidatorCalloutExtender2" runat="server" TargetControlID="RegularExpressionValidator1">
+        </cc1:ValidatorCalloutExtender>
+        <asp:Label ID="Label4" runat="server" Text="Email_Id" ></asp:Label>      
+</td>
+        <td><asp:TextBox ID="TextBox1" runat="server" Height="24px" Width="150px" 
+                ></asp:TextBox>
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                ErrorMessage="You must Enter an Email Address" 
+                ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" 
+                ControlToValidate="TextBox1">*</asp:RegularExpressionValidator>
+       </td>
+   </tr>
+    <tr><td>
+    <cc1:PasswordStrength ID="PasswordStrength1" runat="server" TargetControlID="txtpwd">
+        </cc1:PasswordStrength>  
+        <asp:Label ID="Label2" runat="server" Text="Password" ></asp:Label>       
+</td>
+        <td><asp:TextBox ID="txtpwd" runat="server" TextMode="Password" Height="20px" 
+                Width="147px" ></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                ErrorMessage="RequiredFieldValidator" ControlToValidate="txtpwd">Please 
+            enter password</asp:RequiredFieldValidator>
+        </td>
+   </tr>
+   <tr>
+        <td colspan="2"> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:ImageButton 
+                ID="ImageButton1" runat="server" Height="30px" 
+                ImageUrl="~/images/sbm.gif" />
+            &nbsp;&nbsp;&nbsp;
+            <br /></td></tr>
+            <tr><td colspan="2">  <asp:Label ID="Label6" runat="server" Text="Forgot your Pasword?"></asp:Label>
+        
+            <asp:HyperLink ID="HyperLink10" runat="server" NavigateUrl="~/forgotpwd.aspx">Click 
+                here</asp:HyperLink></td></tr>
+          <tr><td  colspan="2">
+          <asp:Label ID="Label1" runat="server" Text="No Account yet?"></asp:Label>
+        
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/registration.aspx">Click 
+              here</asp:HyperLink>
+          </td></tr>
+        
+    
+        </table></span>
+</td><td style="border: medium solid #2D89AC">
+<asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+    </asp:ContentPlaceHolder>
+</td></tr></table>
+
+</asp:Content>
+

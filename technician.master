@@ -1,0 +1,42 @@
+﻿<%@ Master Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="technician.master.vb" Inherits="technician" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    
+     <table style="height: 107px; width: 949px">
+    <tr>
+    <td>
+ <div id="leftmenu">
+
+        <div id="leftmenu_top"></div>
+
+				<div id="leftmenu_main">    
+                <ul>
+                    <li> 
+                        <asp:HyperLink ID="HyperLink3" runat="server" 
+        NavigateUrl="~/view_task.aspx" >View Task</asp:HyperLink></li>
+                    <li> 
+                        <asp:HyperLink ID="HyperLink1" runat="server" 
+        NavigateUrl="~/change.aspx" >Change Password</asp:HyperLink></li>
+                   
+                    <li> <asp:HyperLink ID="HyperLink5" runat="server" 
+        NavigateUrl="~/index.aspx" >Log Out</asp:HyperLink></li>
+                   
+                </ul>
+</div>              
+              <div id="leftmenu_bottom"></div>
+        </div>
+</td>
+       
+        <td style="border: medium solid #2D89AC">
+        <div id="cust">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+            </asp:ContentPlaceHolder></div>
+        </td>
+    </tr>
+</table>
+    
+</asp:Content>
+
